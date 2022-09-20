@@ -23,6 +23,7 @@ public class DateUtils {
 
     /**
      * 取得间隔天数.
+     *
      * @param startDate
      * @param endDate
      * @return
@@ -48,6 +49,7 @@ public class DateUtils {
 
     /**
      * 将字符串转换成日期.
+     *
      * @param date
      * @return
      */
@@ -67,6 +69,7 @@ public class DateUtils {
 
     /**
      * 取得数字的字符表示.
+     *
      * @param number
      * @return
      */
@@ -74,12 +77,13 @@ public class DateUtils {
         if (number <= 0 || number > 9) {
             return Integer.toString(number);
         }
-        String[] nums = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+        String[] nums = {"一", "二", "三", "四", "五", "六", "七", "八", "九"};
         return nums[number - 1];
     }
 
     /**
      * 日期增加天数.
+     *
      * @param date
      * @param day
      * @return
@@ -94,12 +98,13 @@ public class DateUtils {
 
     /**
      * 日期增加/减少月数.
+     *
      * @param date
      * @param month
      * @return
      */
     @SuppressWarnings("static-access")
-    public static Date addMonth(Date date,int month) {
+    public static Date addMonth(Date date, int month) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.add(calendar.MONTH, month);
@@ -108,6 +113,7 @@ public class DateUtils {
 
     /**
      * 日期加秒数.
+     *
      * @param date
      * @param second
      * @return
@@ -122,6 +128,7 @@ public class DateUtils {
 
     /**
      * 转换为日期.
+     *
      * @param dateSrc
      * @param fmt
      * @return
@@ -144,6 +151,7 @@ public class DateUtils {
 
     /**
      * 转换为日期.
+     *
      * @param dateSrc 日期字符串
      * @return 日期
      */
@@ -153,11 +161,12 @@ public class DateUtils {
 
     /**
      * 取得日期的星期.
+     *
      * @param date 日期
      * @return 中文周名称
      */
     public static String getWeekOfDate(Date date) {
-        String[] weekDaysName = { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
+        String[] weekDaysName = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int intWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
@@ -167,6 +176,7 @@ public class DateUtils {
 
     /**
      * 取得当前日期是周几.
+     *
      * @param date
      * @return
      */
@@ -179,6 +189,7 @@ public class DateUtils {
 
     /**
      * 将时间戳转换为时间
+     *
      * @param s
      * @return
      */
@@ -228,17 +239,18 @@ public class DateUtils {
 
     /**
      * 获取近期的12个月
+     *
      * @param Num 距今几个月的前12个月
      * @return
      */
     public static String[] getMonths(int Num) {
         String[] months = new String[12];
         Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.MONTH, cal.get(Calendar.MONTH)-Num);
+        cal.set(Calendar.MONTH, cal.get(Calendar.MONTH) - Num);
         // 加一行代码,否则3月重复
         cal.set(Calendar.DATE, 1);
         for (int i = 0; i < 12; i++) {
-            months[11 - i] = cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH)+1);
+            months[11 - i] = cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1);
             cal.set(Calendar.MONTH, cal.get(Calendar.MONTH) - 1);
         }
         return months;

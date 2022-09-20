@@ -145,7 +145,7 @@ public class CookieUtils {
                 cookieValue = URLEncoder.encode(cookieValue, "utf-8");
             }
             Cookie cookie = new Cookie(cookieName, cookieValue);
-            if (cookieMaxage > 0){
+            if (cookieMaxage > 0) {
                 cookie.setMaxAge(cookieMaxage);
             }
             if (null != request) {// 设置域名的cookie
@@ -204,15 +204,15 @@ public class CookieUtils {
             // http://www.baidu.com/aaa/bb/ccc
             // www.baidu.com.cn
             serverName = serverName.toLowerCase();
-            if (serverName.startsWith("http://")){
+            if (serverName.startsWith("http://")) {
                 serverName = serverName.substring(7);
-            } else if (serverName.startsWith("https://")){
+            } else if (serverName.startsWith("https://")) {
                 serverName = serverName.substring(8);
             }
             final int end = serverName.indexOf(":");
-            System.out.println(end+" end......");
+            System.out.println(end + " end......");
             serverName = serverName.substring(0, end);
-            System.out.println(serverName+" Server........");
+            System.out.println(serverName + " Server........");
             final String[] domains = serverName.split("\\.");
             int len = domains.length;
             if (len > 3) {
@@ -220,7 +220,7 @@ public class CookieUtils {
                 domainName = domains[len - 3] + "." + domains[len - 2] + "." + domains[len - 1];
             } else if (len <= 3 && len > 1) {
                 // xxx.com or xxx.cn
-                domainName =  domains[len - 2] + "." + domains[len - 1];
+                domainName = domains[len - 2] + "." + domains[len - 1];
             } else {
                 domainName = serverName;
             }
@@ -230,7 +230,7 @@ public class CookieUtils {
             String[] ary = domainName.split("\\:");
             domainName = ary[0];
         }
-        return domainName=serverName;
+        return domainName = serverName;
 
     }
 }
