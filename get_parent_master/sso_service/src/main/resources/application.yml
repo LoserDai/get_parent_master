@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: df-sso-service
+  datasource:
+    name:
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
