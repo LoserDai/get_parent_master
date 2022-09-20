@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: common-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+zuul:
+  ignored-services: "*" #忽略的服务,多个可以用*
+  sensitive-headers: true
+  routes:
+    df-sso-web:
+      path: /frontend_sso/**
+    df-get-web:
+      path: /backend_sso/**
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
