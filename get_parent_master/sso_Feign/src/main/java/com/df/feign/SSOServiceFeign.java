@@ -2,6 +2,7 @@ package com.df.feign;
 
 import com.df.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -19,7 +20,7 @@ public interface SSOServiceFeign {
      * @return
      */
     @RequestMapping("/")
-    Boolean checkUserInfo(String checkValue, Integer checkFlag);
+    Boolean checkUserInfo(@PathVariable String checkValue, Integer checkFlag);
 
     /**
      * 注册
