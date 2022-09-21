@@ -6,3 +6,6 @@ spring:
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
+#sso
+SESSION_EXPIRE: 604800
+USER_INFO: USER_INFO

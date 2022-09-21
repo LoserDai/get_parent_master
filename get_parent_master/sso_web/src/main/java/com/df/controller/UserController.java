@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 /**
  * @Author feng.dai
  * @package com.df.controller
@@ -51,6 +53,22 @@ public class UserController {
             return Result.ok();
         }else {
             return Result.error("注册失败!");
+        }
+    }
+
+    /**
+     * 登录
+     * @param username
+     * @param pwd
+     * @return
+     */
+    @RequestMapping("/")
+    public Result userLogin(String username, String pwd){
+        Map map = ssoServiceFeign.userLogin(username, pwd);
+        if (map.size() > 0){
+            return Result.ok(map);
+        }else {
+            return Result.error("Login Error!");
         }
     }
 }

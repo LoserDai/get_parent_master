@@ -5,6 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Map;
+
 /**
  * @Author feng.dai
  * @package com.df.feign
@@ -29,4 +31,13 @@ public interface SSOServiceFeign {
      */
     @RequestMapping("/")
     int userRegister(User user);
+
+    /**
+     * 登录
+     * @param username
+     * @param pwd
+     * @return
+     */
+    @RequestMapping("/")
+    Map userLogin(String username, String pwd);
 }

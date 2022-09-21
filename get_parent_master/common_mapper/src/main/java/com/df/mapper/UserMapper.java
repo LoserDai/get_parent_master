@@ -1,5 +1,10 @@
 package com.df.mapper;
 
+import com.df.pojo.User;
+
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * @Author feng.dai
  * @package com.df.mapper
@@ -10,4 +15,7 @@ public interface UserMapper {
 
     Boolean checkInfo(String checkValue, Integer checkFlag);
 
+    int insertSelective(User user);
+
+    List<User> selectUser(HashMap<String, Object> map);
 }

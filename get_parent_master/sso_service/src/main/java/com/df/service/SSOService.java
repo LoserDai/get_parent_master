@@ -1,5 +1,9 @@
 package com.df.service;
 
+import com.df.pojo.User;
+
+import java.util.Map;
+
 /**
  * @Author feng.dai
  * @package com.df.service
@@ -9,4 +13,8 @@ package com.df.service;
 public interface SSOService {
 
     Boolean checkInfo(String checkValue, Integer checkFlag);
+
+    int userRegister(User user);
+
+    Map userLogin(String username, String pwd);
 }
