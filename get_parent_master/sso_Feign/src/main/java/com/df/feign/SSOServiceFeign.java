@@ -3,7 +3,9 @@ package com.df.feign;
 import com.df.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
@@ -21,16 +23,16 @@ public interface SSOServiceFeign {
      * @param checkFlag
      * @return
      */
-    @RequestMapping("/")
-    Boolean checkUserInfo(@PathVariable String checkValue, Integer checkFlag);
+    @RequestMapping("/url1")
+    Boolean checkUserInfo(@PathVariable String checkValue, @PathVariable Integer checkFlag);
 
     /**
      * 注册
      * @param user
      * @return
      */
-    @RequestMapping("/")
-    int userRegister(User user);
+    @RequestMapping("/url2")
+    int userRegister(@RequestBody User user);
 
     /**
      * 登录
@@ -38,6 +40,6 @@ public interface SSOServiceFeign {
      * @param pwd
      * @return
      */
-    @RequestMapping("/")
-    Map userLogin(String username, String pwd);
+    @RequestMapping("/url3")
+    Map userLogin(@RequestParam String username, @RequestParam String pwd);
 }

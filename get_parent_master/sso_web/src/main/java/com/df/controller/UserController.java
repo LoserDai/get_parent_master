@@ -18,7 +18,7 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping("/frontend/sso")
+@RequestMapping("/")
 public class UserController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class UserController {
      * @param checkFlag
      * @return
      */
-    @RequestMapping("/")
+    @RequestMapping("/url1")
     public Result checkUserInfo(@PathVariable String checkValue, @PathVariable Integer checkFlag) {
         Boolean checkInfo = ssoServiceFeign.checkUserInfo(checkValue, checkFlag);
         if (checkInfo) {
@@ -46,7 +46,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping("/")
+    @RequestMapping("/url2")
     public Result userRegister(User user) {
         int count = ssoServiceFeign.userRegister(user);
         if (count == 1){
@@ -62,7 +62,7 @@ public class UserController {
      * @param pwd
      * @return
      */
-    @RequestMapping("/")
+    @RequestMapping("/url3")
     public Result userLogin(String username, String pwd){
         Map map = ssoServiceFeign.userLogin(username, pwd);
         if (map.size() > 0){
