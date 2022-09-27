@@ -1,4 +1,4 @@
-package utils;
+package com.df.util;
 
 import org.lionsoul.ip2region.DataBlock;
 import org.lionsoul.ip2region.DbConfig;
