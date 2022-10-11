@@ -18,4 +18,6 @@ public interface UserMapper {
     int insertSelective(User user);
 
     List<User> selectUser(HashMap<String, Object> map);
+
+    List<User> getAll(Long id);
 }

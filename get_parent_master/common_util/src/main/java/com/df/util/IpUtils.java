@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
 
+/**
+ * @author Loser
+ */
 public class IpUtils {
 
     /**

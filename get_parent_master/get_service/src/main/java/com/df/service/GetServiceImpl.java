@@ -1,7 +1,12 @@
 package com.df.service;
 
+import com.df.mapper.UserMapper;
+import com.df.pojo.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @Author feng.dai
@@ -12,4 +17,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class GetServiceImpl implements GetService {
+
+    @Autowired
+    private UserMapper userMapper;
+    @Override
+    public List<User> getAll(Long id) {
+        List<User> userList = userMapper.getAll(id);
+        return userList;
+    }
 }
