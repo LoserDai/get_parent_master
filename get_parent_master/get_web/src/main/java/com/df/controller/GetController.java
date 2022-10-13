@@ -1,3 +1,5 @@
+package com.df.controller;
+
 import com.df.feign.GetFeign;
 import com.df.pojo.User;
 import com.df.util.Result;
@@ -10,7 +12,7 @@ import java.util.List;
 
 /**
  * @Author feng.dai
- * @package PACKAGE_NAME
+ * @package com.df.controller
  * @project get_parent_master
  * @Date 2022/9/27 17:15
  */
