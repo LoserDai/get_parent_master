@@ -20,6 +20,12 @@ public class GetServiceImpl implements GetService {
 
     @Autowired
     private UserMapper userMapper;
+
+    /**
+     * 根据ID获取所有用户信息
+     * @param id
+     * @return
+     */
     @Override
     public List<User> getAll(Long id) {
         List<User> userList = userMapper.getAll(id);
