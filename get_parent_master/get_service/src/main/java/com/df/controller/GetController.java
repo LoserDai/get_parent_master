@@ -2,7 +2,6 @@ package com.df.controller;
 
 import com.df.pojo.User;
 import com.df.service.GetService;
-import com.df.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
